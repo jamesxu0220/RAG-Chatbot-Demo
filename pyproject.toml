@@ -94,4 +94,5 @@ requires-poetry = ">=2.1.1,<2.1.2"
 
 [tool.poetry.dependencies]
 python = ">=3.12,<3.13"
+flask = "^3.1.0"
 
