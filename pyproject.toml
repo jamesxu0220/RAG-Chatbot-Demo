@@ -82,6 +82,10 @@ skip_gitignore = true
 src_paths = []
 use_parentheses = true
 
+[tool.mypy]
+explicit_package_bases = true
+no_implicit_optional = true
+
 [tool.poetry]
 package-mode = false
 version = "0.1.0"
