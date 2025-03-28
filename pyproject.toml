@@ -68,6 +68,20 @@ omit = [
 relative_files = true
 source = []
 
+[tool.isort]
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+known_first_party = []
+line_length = 88
+lines_between_sections = 1
+multi_line_output = 3
+profile = "black"
+skip = []
+skip_gitignore = true
+src_paths = []
+use_parentheses = true
+
 [tool.poetry]
 package-mode = false
 version = "0.1.0"
