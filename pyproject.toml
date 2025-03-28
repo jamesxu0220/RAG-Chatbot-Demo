@@ -1,0 +1,23 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "sandbox"
+description = "AI sandbox for jamesxu0220"
+authors = [
+    { name = "James Xu", email = "zx2370@columbia.edu" },
+]
+requires-python = ">=3.12,<3.13"
+
+[tool]
+
+[tool.poetry]
+package-mode = false
+version = "0.1.0"
+packages = []
+requires-poetry = ">=2.1.1,<2.1.2"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+
