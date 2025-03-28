@@ -32,6 +32,42 @@ exclude = '''
 line-length = 88
 target-version = ['py312']
 
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "def main",
+    "__version__",
+    "from",
+    "import",
+]
+include_namespace_packages = true
+omit = [
+    "*/test*.py",
+    "*/*_test.py",
+    "*/conftest.py",
+    "*/__init__.py",
+]
+show_missing = true
+skip_covered = false
+
+[tool.coverage.run]
+branch = true
+omit = [
+    "*/test*.py",
+    "*/*_test.py",
+    "*/conftest.py",
+    "*/__init__.py",
+]
+relative_files = true
+source = []
+
 [tool.poetry]
 package-mode = false
 version = "0.1.0"
