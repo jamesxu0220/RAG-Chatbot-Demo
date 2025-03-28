@@ -1,0 +1,57 @@
+---
+repos:
+    # basic pre-commit file linting
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.4.0
+      hooks:
+          - id: trailing-whitespace
+          - id: end-of-file-fixer
+          - id: check-yaml
+            args: [--unsafe]
+          - id: check-toml
+          - id: check-added-large-files
+          - id: check-merge-conflict
+
+    # python import sorting
+    - repo: https://github.com/pycqa/isort
+      rev: 5.12.0
+      hooks:
+          - id: isort
+            name: isort (python)
+            args: [--profile, black, --filter-files]
+
+    # python code formatting
+    - repo: https://github.com/psf/black
+      rev: 24.1.1
+      hooks:
+          - id: black
+            language_version: python3.12
+
+    # yaml file formatting
+    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+      rev: 0.2.3
+      hooks:
+          - id: yamlfmt
+
+    # toml file formatting
+    - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+      rev: v2.10.0
+      hooks:
+          - id: pretty-format-toml
+            args: [--autofix, --indent, '4', --trailing-commas]
+
+    # Flake8
+    - repo: https://github.com/PyCQA/flake8
+      rev: 6.1.0
+      hooks:
+          - id: flake8
+            additional_dependencies: [flake8-docstrings == 1.7.0]
+
+    # check commit messages for Conventional Commits formatting
+    # install using: pre-commit install --hook-type commit-msg
+    - repo: https://github.com/compilerla/conventional-pre-commit
+      rev: v2.4.0
+      hooks:
+          - id: conventional-pre-commit
+            stages: [commit-msg]
+            args: [feat, fix, style, refac, build, perf, test, chore, docs]

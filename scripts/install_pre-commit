@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Install the specified pre-commit hooks
+echo -e "\n--- Installing pre-commit hooks. ---"
+pre-commit install \
+	   --install-hooks \
+	   -t pre-commit \
+	   -t pre-merge-commit \
+	   -t post-checkout \
+	   -t post-commit \
+	   -t post-merge \
+	   -t commit-msg
+
+
+# Show pre-commit version number
+echo -e "\n[Pre-commit version number]:"
+pre-commit --version
