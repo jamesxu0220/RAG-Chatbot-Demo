@@ -72,7 +72,9 @@ source = []
 ensure_newline_before_comments = true
 force_grid_wrap = 0
 include_trailing_comma = true
-known_first_party = []
+known_first_party = [
+    'rag_app',
+]
 line_length = 88
 lines_between_sections = 1
 multi_line_output = 3
@@ -84,12 +86,15 @@ use_parentheses = true
 
 [tool.mypy]
 explicit_package_bases = true
+ignore_missing_imports = true
 no_implicit_optional = true
 
 [tool.poetry]
 package-mode = false
 version = "0.1.0"
-packages = []
+packages = [
+    { include = "rag_app", from = "backend"},
+]
 requires-poetry = ">=2.1.1,<2.1.2"
 
 [tool.poetry.dependencies]
