@@ -35,3 +35,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+
+# Env secrets
+.env
