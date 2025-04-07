@@ -34,11 +34,11 @@ repos:
           - id: yamlfmt
 
     # toml file formatting
-    - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-      rev: v2.10.0
-      hooks:
-          - id: pretty-format-toml
-            args: [--autofix, --indent, '4', --trailing-commas]
+    # - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    #   rev: v2.10.0
+    #   hooks:
+    #       - id: pretty-format-toml
+    #         args: [--autofix, --indent, '4', --trailing-commas]
 
     # Flake8
     - repo: https://github.com/PyCQA/flake8

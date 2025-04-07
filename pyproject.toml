@@ -100,4 +100,9 @@ requires-poetry = ">=2.1.1,<2.1.2"
 [tool.poetry.dependencies]
 python = ">=3.12,<3.13"
 flask = "^3.1.0"
-
+python-dotenv = "^1.1.0"
+langchain = "^0.3.23"
+openai = "^1.70.0"
+faiss-cpu = "^1.10.0"
+llama-index = "^0.12.28"
+langchain-community = "^0.3.21"
