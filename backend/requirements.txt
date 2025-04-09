@@ -2,6 +2,6 @@ flask
 python-dotenv
 langchain
 langchain_community
-llama-index
+tiktoken
 openai
 faiss-cpu

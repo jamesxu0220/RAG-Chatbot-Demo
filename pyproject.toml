@@ -90,7 +90,7 @@ ignore_missing_imports = true
 no_implicit_optional = true
 
 [tool.poetry]
-package-mode = false
+package-mode = true
 version = "0.1.0"
 packages = [
     { include = "rag_app", from = "backend"},
