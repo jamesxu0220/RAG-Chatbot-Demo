@@ -178,3 +178,6 @@ cython_debug/
 
 # FAISS local indexes
 faiss_index/
+
+# Testing notebooks
+test*.ipynb
