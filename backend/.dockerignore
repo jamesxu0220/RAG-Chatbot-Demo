@@ -38,3 +38,6 @@ cover/
 
 # Env secrets
 .env
+
+# FAISS local indexes
+faiss_index/
