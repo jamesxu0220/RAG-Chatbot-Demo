@@ -1,9 +1,7 @@
 """Defines different blueprints (with corresponding routes as HTTP endpoints)."""
 
-from flask import Blueprint, jsonify
-
-from rag_app.ingestion import document_ingestion
-from rag_app.vector_stores.vector_store import load_vector_store
+from flask import Blueprint, current_app, jsonify
+from langchain_community.vectorstores import FAISS
 
 base = Blueprint("base", __name__)
 rag = Blueprint("rag", __name__)
@@ -16,21 +14,9 @@ def status():
     return jsonify({"status": "NORMAL"}), 200
 
 
-@rag.route("/load-docs", methods=["POST"])
-def load_documents():
-    """Load documents into a vector store and save the index to local directory."""
-    document_ingestion()
-    return jsonify({"status": "Documents loaded successfully"}), 200
-
-
-@rag.route("/check-vector_store", methods=["GET"])
-def get_vector_store():
-    """Check whether the vector store had been created."""
-    try:
-        load_vector_store()
-        return jsonify({"status": "Vector store loaded successfully"}), 200
-    except FileNotFoundError:
-        return (
-            jsonify({"status": "Vector store not found. Please load documents first."}),
-            404,
-        )
+@rag.route("/vectorstore-ready", methods=["GET"])
+def vectorstore_ready():
+    """Check if the vector store is loaded and ready."""
+    vector_store = current_app.config.get("VECTORSTORE")
+    ready = isinstance(vector_store, FAISS)
+    return jsonify({"vectorstore_loaded": ready}), 200
