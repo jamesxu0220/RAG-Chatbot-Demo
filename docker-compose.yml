@@ -8,3 +8,8 @@ services:
             - ./faiss_index:/app/faiss_index
         image: jamesxu0220/rag_sandbox:0.1.0
         env_file: .env
+    frontend:
+        build: ./frontend
+        ports:
+            - 8501:8501
+        image: jamesxu0220/rag_frontend:0.1.0
