@@ -1,7 +1,9 @@
 """Defines different blueprints (with corresponding routes as HTTP endpoints)."""
 
-from flask import Blueprint, current_app, jsonify
+from flask import Blueprint, jsonify
 from langchain_community.vectorstores import FAISS
+
+from rag_app.vector_stores.vector_store import get_vector_store
 
 base = Blueprint("base", __name__)
 rag = Blueprint("rag", __name__)
@@ -14,9 +16,9 @@ def status():
     return jsonify({"status": "NORMAL"}), 200
 
 
-@rag.route("/vectorstore-ready", methods=["GET"])
-def vectorstore_ready():
+@rag.route("/ping-vector-store", methods=["GET"])
+def check_vector_store_ready():
     """Check if the vector store is loaded and ready."""
-    vector_store = current_app.config.get("VECTORSTORE")
+    vector_store = get_vector_store()
     ready = isinstance(vector_store, FAISS)
-    return jsonify({"vectorstore_loaded": ready}), 200
+    return jsonify({"vector_store_loaded": ready}), 200
