@@ -4,6 +4,8 @@ This project is a **full-stack Retrieval-Augmented Generation (RAG) chatbot assi
 
 It demonstrates how to build a modular, conversational LLM-based Q&A system over domain-specific documents — in this case, summaries of rental buildings in the NYC metropolitan area (based on places I or friends have lived in or visited).
 
+---
+
 ### Key Features:
 
 - 📄 Document ingestion, chunking, and semantic embedding via OpenAI's embedding models
